@@ -1,3 +1,69 @@
+// third Method 
+@import "style-custom";
+// Second Method 
+// @mixin mq($br-size){
+//     @media (min-width: $br-size){
+//         @content;
+//     }
+// }
+
+$blueColor : rgb(91, 110, 124);
+$transparent: transparent;
+$navsColor: rgb(19, 36, 72);
+$white: rgb(255, 255, 255);
+
+.top-header{
+    background-color: #00b8df;
+    color: #cccccc;
+    &::after {
+        background-color: #dd2424;
+        content: 'Hello';
+        text-align: center;
+    }
+
+    // Third Method
+    @include mq(medium){
+        & .dealofweek a, & .top-shipping a{
+            color: $white;
+        }
+        &:hover{
+            background-color: $navsColor;
+            color: $white;
+        }
+    }
+    
+    // @include mq(50em){
+    //     & .top-deals p{
+    //         color: $white;
+    //     }
+    //     &:hover{
+    //         background-color: $navsColor;
+    //         color: $white;
+    //     }
+    // }
+
+    // Second Method
+    // @include mq(50em){
+    //     & .top-deals p{
+    //         color: $white;
+    //     }
+    //     &:hover{
+    //         background-color: $navsColor;
+    //         color: $white;
+    //     }
+    // }
+
+    // First method
+    // @media (min-width: 50em ) {
+    //     &:hover{
+    //         background-color: $transparent;
+    //     }
+    // }
+
+}
+
+
+
 .mobileMenu-toggle.is-open .mobileMenu-toggleIcon {
     background-color: transparent!important;
     transition-delay: 100ms;
@@ -48,6 +114,7 @@ body{
     margin-bottom: 1rem;
    
 }
+
 .login-row {
     margin-top: 6rem;
     display: flex;

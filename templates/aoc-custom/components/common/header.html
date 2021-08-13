@@ -66,6 +66,20 @@
 </div>
    
 </header>
-
+<script>
+    $(window).scroll(function() {
+ 
+     if ($(this).scrollTop()>0)
+      {
+         $('.top-header').fadeOut();
+      }
+     else
+      {
+      $('.top-header').fadeIn();
+      }
+  });
+ </script>
+ 
+ 
 <!-- {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}} -->

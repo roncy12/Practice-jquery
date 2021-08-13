@@ -39,7 +39,7 @@
         <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
+        <script src="{{cdn 'assets/jquery-3.3.1.min.js'}}"></script>
         <script>
             WebFont.load({
                 custom: {
@@ -99,32 +99,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="{{cdn 'assets/jquery-3.3.1.min.js'}}"></script>
+   
 <script type="text/javascript">
 
-        var $animation_elements = document.querySelector('.animation-element');
-        var $window = document.querySelector(window);
-
-        function check_if_in_view() {
-          var window_height = $window.height();
-          var window_top_position = $window.scrollTop();
-          var window_bottom_position = (window_top_position + window_height);
-         
-          $.each($animation_elements, function() {
-            var $element = $(this);
-            var element_height = $element.outerHeight();
-            var element_top_position = $element.offset().top;
-            var element_bottom_position = (element_top_position + element_height);
-         
-            //check to see if this current container is within viewport
-            if ((element_bottom_position >= window_top_position) &&
-                ((element_top_position+60) <= window_bottom_position)) {
-              $element.addClass('in-view');
-            } else {
-//                $element.removeClass('in-view');
-            }
-          });
-        }
 
         $window.on('scroll resize', check_if_in_view);
         $window.trigger('scroll');        
@@ -190,15 +167,7 @@
                 }
               }
 
-              $('.variable-width').slick({
-              dots: true,
-              infinite: true,
-              speed: 300,
-              slidesToShow: 1,
-              centerMode: true,
-              variableWidth: true,
-              arrows: true
-            });
+
                 
           </script>
 
@@ -235,20 +204,6 @@
         <script type="text/javascript">
           AOS.init();              
         </script>
-<script>
-   $(window).scroll(function() {
-
-    if ($(this).scrollTop()>0)
-     {
-        $('.top-header').fadeOut();
-     }
-    else
-     {
-     $('.top-header').fadeIn();
-     }
- });
-</script>
-
 
 
         {{{footer.scripts}}}
